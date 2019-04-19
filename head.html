@@ -1,0 +1,92 @@
+<head>
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_868870_8v03ksfw51h.css"/>
+</head>
+<header>
+    <div class="main-md">
+        <div class="head_img lf">
+            <a href="#"><img src="images/index/logo.png" alt=""/></a>
+        </div>
+        <div class="head_list rt">
+            <ul>
+                <li class="active"><a href="#">  首页 </a></li>
+                <li><a href="#">  智慧用电 </a></li>
+                <li><a href="#">  应用范围 </a></li>
+                <li><a href="#">  经典案例 </a></li>
+                <li><a href="#">  相关产品 </a></li>
+                <li><a href="#">  服务介绍 </a></li>
+                <li><a href="#">  行业资讯 </a></li>
+                <li><a href="#">  关于我们 </a></li>
+            </ul>
+            <div class="tels">
+                <p> <i class="iconfont icon-dianhua"></i> 010-57103072 </p>
+            </div>
+        </div>
+        <div class="both"></div>
+    </div>
+</header>
+<div class="head-phone">
+    <div class="head-logo lf">
+        <a href="#">
+            <span><a href="#"><img src="images/index/logo.png" alt=""/></a></span>
+        </a>
+    </div>
+    <div class="top_cen rt">
+        <a href="javascript:;">
+            <span></span>
+            <span></span>
+            <span></span>
+        </a>
+        <a class="cen_x active" href="javascript:;">
+            ×
+        </a>
+    </div>
+    <ul class="navlist_mo">
+        <li class="active"><a href="#">  首页 </a></li>
+        <li><a href="#">  智慧用电 </a></li>
+        <li><a href="#">  应用范围 </a></li>
+        <li><a href="#">  经典案例 </a></li>
+        <li><a href="#">  相关产品 </a></li>
+        <li><a href="#">  服务介绍 </a></li>
+        <li><a href="#">  行业资讯 </a></li>
+        <li><a href="#">  关于我们 </a></li>
+    </ul>
+</div>
+<script>
+    $(function(){
+        /*导航下拉宽度控制*/
+        /*导航下拉效果*/
+        $('.head-list>li').on('mouseenter',function(){
+            $(this).children('div').slideDown(200);
+        }).on('mouseleave',function(){
+            $(this).children('div').slideUp(200);
+        });
+        //点击切换导航栏按钮  手机端
+        $('.head-phone').on('click','.top_cen a',function(){
+            if($(this).attr('class')!='active'){
+                $(this).addClass('active');
+                $(this).siblings().removeClass('active');
+            }else{
+                $(this).removeClass('active');
+                $(this).siblings().addClass('active');
+            }
+            if($(this).attr('class')!='cen_x active'){
+                $('body').css('right','50%');
+                $('.nav_bg').fadeIn();
+                $('.navlist_mo').css('right','0');
+            }else{
+                $('body').css('right','0');
+                $('.nav_bg').fadeOut();
+                $('.navlist_mo').css('right','-50%');
+            }
+        });
+        //侧边栏点击切换效果  手机端
+        $('.head-phone').on('click','.mo>a',function(){
+            if($(this).parent().attr('class')!='mo active'){
+                $(this).parent().addClass('active');
+                $(this).parent().siblings().removeClass('active');
+            }else{
+                $(this).parent().removeClass('active');
+            }
+        });
+    })
+</script>
